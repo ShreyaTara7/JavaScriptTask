@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Registration Page</title>
+<style>
+html, body {
+display: flex;
+height: 100%;
+width: 100%;
+font-family: -apple-system, BlinkMacSystemFont;
+}
+h1 {
+text-align: center;
+}
+.form {
+margin: 20px auto;
+}
+.btn
+{
+  background-color: pink;
+  margin-left: 150px;
+  width: 100px;
+  height: 30px;
+  margin-top: 30px;
+
+
+}
+input {
+display: block;
+margin-bottom: 20px;
+width: 300px;
+height: 20px;
+font-size: 14px;
+}
+.required
+{
+    color: red;
+}
+.formbody
+{
+  border-width:  5px;
+  border-style: solid;
+  border-color: black;
+  background-color: #1fdbdb;
+}
+</style>
+</head>
+<body bgcolor="pink">
+<div class="form formbody">
+<h1>Registration Page</h1>
+<form>
+  <table>
+    <tr>
+  <td><label class="control-label" for="username">Username</label> <span class="required">*</span></td>
+<td><input type="text" name="name" id="name" placeholder="Name">
+</td>
+</tr>
+<tr>
+<td><label class="control-label" for="email">Email</label> <span class="required">*</span></td>
+  <td>
+<input type="text" name="email" id="email" placeholder="E-Mail">
+</td>
+</tr>
+<tr>
+<td><label class="control-label" for="pass">Password</label> <span class="required">*</span></td>
+  <td>
+<input type="password" name="pwd" id="pwd" placeholder="Password">
+</td>
+</tr>
+<tr>
+  <td><label class="control-label" for="phne">Contact Number</label> <span class="required">*</span></td>
+  <td>
+<input type="text" name="phone" id="phone" placeholder="Phone Number">
+</td>
+</tr>
+<tr>
+<td><label class="control-label" for="username">DateOfBirth</label> <span class="required">*</span></td>
+<td><input type="date" name="name" id="db" placeholder="">
+</td>
+</tr>
+<tr>
+<td>City : </td>
+<td><input type="textarea" name="name" id="name" placeholder="City">
+</td>
+</tr>
+<tr>
+<td>State : </td>
+<td><input type="textarea" name="name" id="name" placeholder="state">
+</td>
+</tr>
+
+<tr>
+<td>PinCode : </td>
+<td><input type="textarea" name="name" id="name" placeholder="pincode">
+</td>
+</tr>
+<!--tr>
+  <td>
+<input type="button" value="Register" onclick="validate()">
+</td>
+</tr-->
+</table>
+<button  class="btn" onclick="validate()">Register</button>
+<!--input type="button" value="Register" onclick="validate()"-->
+</form>
+
+</div>
+<script>
+function validate()
+{
+var name = document.getElementById('name').value
+var email = document.getElementById('email').value
+var pwd = document.getElementById('pwd').value
+var ph = document.getElementById('phone').value
+//var dob = document.getElementById('db').value;
+var nameValid = name.match(/^[A-Za-z ]+$/)
+var emailValid = email.match(/^[\w\.-]+@[\w\.]+[A-Za-z]{2,3}$/)
+var pwdValid = pwd.match(/^.{6,}$/)
+var phValid = ph.match(/^\d{10}$/)
+//var pattern =dob.match(/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/)
+  /* if (dob == null || dob == "" || !pattern)
+    {
+    windows.alert("Invalid date of birth");
+  }*/
+if(!nameValid) {
+  window.alert("invalid username");
+
+} else if(!emailValid) {
+    window.alert("invalid email");
+
+} else if(!pwdValid) {
+    window.alert("invalid password");
+
+} else if(!phValid) {
+    window.alert("invalid phno");
+
+} else {
+    window.alert("Welcome "+name);
+
+}
+}
+</script>
+</body>
+</html>
